@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: deployment
 metadata:
-  name: nginx-deployment
+  name: pincode-service-deployment
   labels:
-      name : app
+      name : pincode-service
 spec:
   replicas : 2
   selectors:
     matchLabels :
-      app:nginx
+      name:pincode-service
   template:
     metadata:
       labels:
-        app: nginx
+        app: pincode-service
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.14.2
+      - name: pincode
+        image: <pincode image>
         ports:
         - containerPort: 80
