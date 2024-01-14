@@ -5,7 +5,7 @@ echo "This script is used for lookup service for pincode.
 #Reading the pincode provided
 read -p  "please enter the pincode separated by spaces: " pincode_names
 cd /home/pin-code-CLI/
-do pincode in $pincode_names
+for pincode in $pincode_names
 do 
 # processing and providing the details of the pincode using jq utility
 echo "Details for the pincode `jq '.$pincode' data.json`"
