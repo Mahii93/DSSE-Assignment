@@ -3,4 +3,21 @@ To configure ELK stack, we need three main components
 Elasticsearch 
 Logstash
 Kibana
-Configure the 
+###elasticsearch :
+once configurations are completed, run the below command to deploy it in k8s
+helm install elasticsearch -f elasticsearch-values.yaml &LTchart-name>
+
+####Kibana
+helm install kibana -f kibana-values.yaml &LTchart-name>
+
+
+#### Logstash
+kubectl apply -f logstash-k8s -n $CHANGE_TO_ELASTIC_NS
+
+####Filebeat
+
+kubectl apply -f filebeat-k8s
+
+##deploy simple application to see how the log streaming works
+
+kubeclt apply -f app -n default
