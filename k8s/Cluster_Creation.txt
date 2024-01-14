@@ -1,0 +1,25 @@
+##Following steps need to be followed to create a simple k8s cluster.
+##spin up 3 instances one as master and another two as worker nodes. 
+
+#run the reset command on all the nodes to revert kubeadm join and kubeadm init
+sudo kubeadm reset
+
+#Initializing the kube adm using below command in the master node.
+kubeadm init
+
+#Configure the kubernetes
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# Now copy the unique token generated and run the below commands in the worker nodes.
+
+sudo kubeadm join 172.31.25.37:6443 --token fmeegy.veyfwhprxyrzgecl \
+	 --discovery-token-ca-cert-hash \
+	sha256:abbbb0e9cad2d51cdb606e9adfdc0acb6e81d26d82603eefded9370df28f8517
+
+#Now create a network in the master, run the below command
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl 			version | base64 |tr -d '\n')"
+
+#now the k8s cluster is created and worker nodes are connected to the master.
+
