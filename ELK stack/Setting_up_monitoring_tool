@@ -1,1 +1,6 @@
 This a document to setting_up_monitoring_tool
+To configure ELK stack, we need three main components
+Elasticsearch 
+Logstash
+Kibana
+Configure the 
