@@ -1,0 +1,11 @@
+clusterName: "itsyndicateblog"
+replicas: 2 
+minimumMasterNodes: 1 
+image: "docker.elastic.co/elasticsearch/elasticsearch"
+imageTag: "8.5.1"
+ingress:
+  enabled: false
+hosts:
+    - host: elastic.itsyndicate.org
+      paths:
+        - path: /
