@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+RUN apt-get update && \
+apt-get install -y socat jq
+WORKDIR /app
+RUN curl -v -u username:password -O data.json "https://www.travel-advisory.info/api -k "
+RUN read -p  "please enter the pincode separated by spaces: " pincode_names
+cd /home/pin-code-CLI/  
+do 
+# processing and providing the details of the pincode using jq utility
+echo "Details for the pincode `jq '.$pincode' data.json`"
+echo The pin code passed : $pincode_names
+done
+CMD  read -p  "please enter the pincode separated by spaces: " pincode_names
