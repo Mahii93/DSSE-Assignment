@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: pincode
-        image: <pincode image>
+        image: pincode_image
         ports:
         - containerPort: 80
