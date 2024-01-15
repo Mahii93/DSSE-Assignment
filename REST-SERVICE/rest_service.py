@@ -26,4 +26,9 @@ print(response.status_code)
 
 
 @app.get ("/convert")
-def convert ()
+def get_key (val)
+for key, value in $data.json
+if val == value:
+  return key
+else
+  return "key doesn't exist"
