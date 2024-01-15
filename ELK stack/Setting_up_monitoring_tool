@@ -8,11 +8,11 @@ once configurations are completed, run the below command to deploy it in k8s
 helm install elasticsearch -f elasticsearch-values.yaml &LTchart-name>
 
 ####Kibana
-helm install kibana -f kibana-values.yaml &LTchart-name>
+helm install kibana -f kibana-values.yaml &LTchart-name
 
 
 #### Logstash
-kubectl apply -f logstash-k8s -n $CHANGE_TO_ELASTIC_NS
+kubectl apply -f logstash-k8s
 
 ####Filebeat
 
