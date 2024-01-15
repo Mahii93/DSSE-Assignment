@@ -1,4 +1,4 @@
 # Run the below command to create an image 
 
-docker build -t pincode_image
+docker build -t pincode-service
 
