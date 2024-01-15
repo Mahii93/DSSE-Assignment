@@ -8,9 +8,9 @@ kubetctl describe nodes >> healthcheck.log
 grep "Not Ready" healthcheck.log
 if [ $? -eq 0 ] ;
   then 
-    print "NODES AND PODS ARE NOT RUNNING FINE. Please check"
+    print "NODES OR PODS ARE NOT RUNNING FINE. Please check"
 else 
-    print "NODES AND PODS ARE  RUNNING FINE"
+    print "NODES OR PODS ARE  RUNNING FINE"
 fi;
 
 @app.get("/diag")  
