@@ -24,8 +24,8 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl 			ver
 #now the k8s cluster is created and worker nodes are connected to the master.
 
 #Below command will provide the details to a file
-kubectl get nodes
-kubectl get pods
+kubectl logs pincode > pod_logs.
+kubectl describe node 
 
 
 
