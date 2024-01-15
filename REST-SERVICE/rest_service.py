@@ -15,6 +15,14 @@ fi;
 
 @app.get("/diag")  
 def status()
+#import requests module
+import requests 
+# Making a get request
+response = requests.get('https://www.travel-advisory.info/api') 
+# print response 
+print(response) 
+# print request status_code 
+print(response.status_code) 
 
 
 @app.get ("/convert")
