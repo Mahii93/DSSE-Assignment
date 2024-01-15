@@ -3,8 +3,8 @@ app= FastAPI()
 
 @app.get("/health")
 def health ():
-kubectl get pods > healthcheck.log
-kubetctl get nodes >> healthcheck.log
+kubectl log pincode-service > healthcheck.log
+kubetctl describe nodes >> healthcheck.log
 grep "Not Ready" healthcheck.log
 if [ $? -eq 0 ] ;
   then 
